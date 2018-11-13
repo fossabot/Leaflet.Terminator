@@ -1,10 +1,11 @@
 {
   "name": "@rlueder/leaflet.terminator",
-  "version": "1.0.0",
-  "description": "Night and day regions on Earth",
+  "version": "0.0.3",
+  "description": "Refactored to use ES2015+ and Flow type checking. Original library can be found at https://github.com/joergdietrich/Leaflet.Terminator ",
   "main": "L.Terminator.js",
   "scripts": {
     "build": "rollup -c",
+    "flow": "flow",
     "prepare": "npm run build"
   },
   "repository": {
@@ -22,8 +23,16 @@
   },
   "homepage": "https://github.com/rlueder/Leaflet.Terminator#readme",
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "flow-bin": "^0.86.0",
     "leaflet": "^1.3.1",
-    "rollup": "^0.60.1"
+    "rollup": "^0.60.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0"
   },
   "peerDependencies": {
     "leaflet": "^1.2.0"
