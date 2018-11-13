@@ -6,7 +6,9 @@ function julian(date) {
 	/* Calculate the present UTC Julian Date. Function is valid after
 	 * the beginning of the UNIX epoch 1970-01-01 and ignores leap
 	 * seconds. */
-	return (date / 86400000) + 2440587.5;
+	let JULIAN = (date / 86400000) + 2440587.5;
+	console.log("JULIAN:", JULIAN);
+	return JULIAN;
 }
 
 function GMST(julianDay) {
@@ -14,7 +16,9 @@ function GMST(julianDay) {
 		 http://aa.usno.navy.mil/faq/docs/GAST.php */
 	var d = julianDay - 2451545.0;
 	// Low precision equation is good enough for our purposes.
-	return (18.697374558 + 24.06570982441908 * d) % 24;
+	let GMST = (18.697374558 + 24.06570982441908 * d) % 24;
+	console.log("GMST:", GMST);
+	return GMST;
 }
 
 var Terminator = L.Polygon.extend({
@@ -32,12 +36,14 @@ var Terminator = L.Polygon.extend({
 		this._D2R = Math.PI / 180;
 		L.Util.setOptions(this, options);
 		var latLng = this._compute(this.options.time)
+		console.log("latLng:", latLng);
 		this.setLatLngs(latLng);
 	},
 
 	setTime: function (date) {
 		this.options.time = date;
 		var latLng = this._compute(date);
+		console.log("latLng:", latLng);
 		this.setLatLngs(latLng);
 	},
 
@@ -59,7 +65,9 @@ var Terminator = L.Polygon.extend({
 		// distance from Sun in AU
 		var R = 1.00014 - 0.01671 * Math.cos(g * this._D2R) -
 			0.0014 * Math.cos(2 * g * this._D2R);
-		return {lambda: lambda, R: R};
+		let POSITION = {lambda: lambda, R: R};
+		console.log("POSITION:", POSITION);
+		return POSITION ;
 	},
 
 	_eclipticObliquity: function (julianDay) {
@@ -74,6 +82,7 @@ var Terminator = L.Polygon.extend({
 					+ T * (0.00200340 / 3600
 						- T * (0.576e-6 / 3600
 							- T * 4.34e-8 / 3600))));
+		console.log("epsilon:", epsilon);
 		return epsilon;
 	},
 
@@ -89,15 +98,18 @@ var Terminator = L.Polygon.extend({
 		var lQuadrant = Math.floor(sunEclLng / 90) * 90;
 		var raQuadrant = Math.floor(alpha / 90) * 90;
 		alpha = alpha + (lQuadrant - raQuadrant);
-
-		return {alpha: alpha, delta: delta};
+		let EQUATORIAL_POSITION = {alpha: alpha, delta: delta};
+		console.log("EQUATORIAL_POSITION:", EQUATORIAL_POSITION);
+		return EQUATORIAL_POSITION;
 	},
 
 	_hourAngle: function (lng, sunPos, gst) {
 		/* Compute the hour angle of the sun for a longitude on
 		 * Earth. Return the hour angle in degrees. */
 		var lst = gst + lng / 15;
-		return lst * 15 - sunPos.alpha;
+		let HOUR_ANGLE = lst * 15 - sunPos.alpha;
+		console.log("HOUR_ANGLE:", HOUR_ANGLE);
+		return HOUR_ANGLE;
 	},
 
 	_latitude: function (ha, sunPos) {
@@ -105,6 +117,7 @@ var Terminator = L.Polygon.extend({
 		 * latitude of the terminator in degrees. */
 		var lat = Math.atan(-Math.cos(ha * this._D2R) /
 			Math.tan(sunPos.delta * this._D2R)) * this._R2D;
+		console.log("lat:", lat);
 		return lat;
 	},
 
@@ -129,10 +142,13 @@ var Terminator = L.Polygon.extend({
 			latLng[0] = [-90, -360];
 			latLng[latLng.length] = [-90, 360];
 		}
+		console.log("latLng:", latLng);
 		return latLng;
 	}
 });
 
 export default function terminator(options) {
-	return new Terminator(options);
+	const TERMINATOR = new Terminator(options);
+	console.log(TERMINATOR);
+	return TERMINATOR;
 };
