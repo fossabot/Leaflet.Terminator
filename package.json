@@ -1,5 +1,5 @@
 {
-  "name": "@jrlueder/leaflet.terminator",
+  "name": "@rlueder/leaflet.terminator",
   "version": "1.0.0",
   "description": "Night and day regions on Earth",
   "main": "L.Terminator.js",
