@@ -12,7 +12,6 @@
 const getGMST = (JULIAN_DAY: number) => {
   const GMST =
     (18.697374558 + 24.06570982441908 * (JULIAN_DAY - 2451545.0)) % 24;
-  console.log("GMST:", GMST);
   return GMST;
 };
 

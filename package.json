@@ -1,7 +1,7 @@
 {
   "name": "@rlueder/leaflet.terminator",
-  "version": "0.0.3",
-  "description": "Refactored to use ES2015+ and Flow type checking. Original library can be found at https://github.com/joergdietrich/Leaflet.Terminator ",
+  "version": "0.1.0",
+  "description": "Refactored to use ES2015+, includes Babel and Flow type checking. Original library can be found at https://github.com/joergdietrich/Leaflet.Terminator ",
   "main": "L.Terminator.js",
   "scripts": {
     "build": "rollup -c",
@@ -17,6 +17,12 @@
     "terminator"
   ],
   "author": "Jörg Dietrich",
+  "contributors": [
+    {
+      "name": "Rafael Lüder",
+      "email": "rlueder@pm.me"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rlueder/Leaflet.Terminator/issues"

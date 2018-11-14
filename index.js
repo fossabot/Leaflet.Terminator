@@ -26,19 +26,18 @@ const Terminator = L.Polygon.extend({
   initialize: function(options) {
     this.version = "0.1.0";
     L.Util.setOptions(this, options);
-    const COORDS = this._compute(this.options.time);
-    console.log("latLng:", COORDS);
+    const COORDS = this.compute(this.options.time);
     this.setLatLngs(COORDS);
   },
 
   setTime: function(date) {
     this.options.time = date;
-    const COORDS = this._compute(date);
-    console.log("latLng:", COORDS);
+    const COORDS = this.compute(date);
     this.setLatLngs(COORDS);
   },
 
-  _compute: function(time) {
+  compute: function(time) {
+    // local constants
     const RESOLUTION = this.options.resolution;
     const TODAY = time ? new Date(time) : new Date();
 
@@ -52,6 +51,7 @@ const Terminator = L.Polygon.extend({
     );
     const GMST = getGMST(JULIAN_DAY);
 
+    // creating array of coordinates
     let COORDS = [];
     for (let i = 0; i <= 720 * RESOLUTION; i++) {
       const LONGITUDE = -360 + i / RESOLUTION;
@@ -61,7 +61,6 @@ const Terminator = L.Polygon.extend({
         LONGITUDE
       ];
     }
-
     if (EQUATORIAL_POSITION.delta < 0) {
       COORDS[0] = [90, -360];
       COORDS[COORDS.length] = [90, 360];
@@ -69,8 +68,6 @@ const Terminator = L.Polygon.extend({
       COORDS[0] = [-90, -360];
       COORDS[COORDS.length] = [-90, 360];
     }
-
-    console.log("COORDS:", JSON.stringify(COORDS, null, 4));
     return COORDS;
   }
 });
@@ -83,7 +80,6 @@ const Terminator = L.Polygon.extend({
 
 const terminator = (OPTIONS: Object) => {
   const TERMINATOR = new Terminator(OPTIONS);
-  console.log(TERMINATOR);
   return TERMINATOR;
 };
 

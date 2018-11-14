@@ -11,7 +11,6 @@
 
 const getJulianDay = (DATE: number) => {
   const JULIAN_DAY = DATE / 86400000 + 2440587.5;
-  console.log("JULIAN_DAY:", JULIAN_DAY);
   return JULIAN_DAY;
 };
 

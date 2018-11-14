@@ -22,7 +22,6 @@ const getEclipticObliquity = (JULIAN_DAY: number) => {
             T *
               (0.0020034 / 3600 -
                 T * (0.576e-6 / 3600 - (T * 4.34e-8) / 3600))));
-  console.log("ECLIPTIC_OBLIQUITY:", ECLIPTIC_OBLIQUITY);
   return ECLIPTIC_OBLIQUITY;
 };
 

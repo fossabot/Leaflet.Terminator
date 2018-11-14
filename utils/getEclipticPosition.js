@@ -28,7 +28,6 @@ const getEclipticPosition = (JULIAN_DAY: number) => {
     0.0014 * Math.cos(toRadians(2 * g)); // distance from Sun in AU
 
   const ECLIPTIC_POSITION = { lambda: LAMBDA, R: R };
-  console.log("ECLIPTIC_POSITION:", ECLIPTIC_POSITION);
   return ECLIPTIC_POSITION;
 };
 

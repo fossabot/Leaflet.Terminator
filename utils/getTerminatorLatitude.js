@@ -21,7 +21,6 @@ const getTerminatorLatitude = (
         Math.tan(toRadians(EQUATORIAL_POSITION.delta))
     )
   );
-  console.log("lat:", TERMINATOR_LATITUDE);
   return TERMINATOR_LATITUDE;
 };
 

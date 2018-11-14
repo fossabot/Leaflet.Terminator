@@ -17,7 +17,6 @@ const getHourAngle = (
   GMST: number
 ) => {
   const HOUR_ANGLE = (GMST + LONGITUDE / 15) * 15 - EQUATORIAL_POSITION.alpha;
-  console.log("HOUR_ANGLE:", HOUR_ANGLE);
   return HOUR_ANGLE;
 };
 

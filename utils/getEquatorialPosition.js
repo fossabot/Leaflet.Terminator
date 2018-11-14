@@ -36,7 +36,6 @@ const getEquatorialPosition = (
   ALPHA = ALPHA + (L_QUADRANT - RA_QUADRANT);
 
   const EQUATORIAL_POSITION = { alpha: ALPHA, delta: DELTA };
-  console.log("EQUATORIAL_POSITION:", EQUATORIAL_POSITION);
   return EQUATORIAL_POSITION;
 };
 
