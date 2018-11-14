@@ -1,8 +1,9 @@
 // @flow
 
 /**
- *  Compute the hour angle of the sun for a longitude on Earth.
+ * Compute the hour angle of the sun for a longitude on Earth.
  * Return the hour angle in degrees.
+ * https://en.wikipedia.org/wiki/Hour_angle
  *
  * @function getHourAngle
  * @param {number} LONGITUDE

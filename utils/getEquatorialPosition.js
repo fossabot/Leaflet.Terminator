@@ -5,6 +5,9 @@ import { toDegrees, toRadians } from "./index";
 /**
  * Compute the Sun's equatorial position from its ecliptic position.
  * Inputs are expected in degrees. Outputs are in degrees as well.
+ * https://en.wikipedia.org/wiki/Position_of_the_Sun
+ * https://en.wikipedia.org/wiki/Ecliptic_coordinate_system
+ *
  *
  * @function getEquatorialPosition
  * @param {number} ECLIPTIC_POSITION
@@ -16,22 +19,18 @@ const getEquatorialPosition = (
   ECLIPTIC_POSITION: number,
   ECLIPTIC_OBLIQUITY: number
 ) => {
+  const { asin, atan, cos, floor, sin, tan } = Math;
+
   let ALPHA = toDegrees(
-    Math.atan(
-      Math.cos(toRadians(ECLIPTIC_OBLIQUITY)) *
-        Math.tan(toRadians(ECLIPTIC_POSITION))
-    )
+    atan(cos(toRadians(ECLIPTIC_OBLIQUITY)) * tan(toRadians(ECLIPTIC_POSITION)))
   );
 
   const DELTA = toDegrees(
-    Math.asin(
-      Math.sin(toRadians(ECLIPTIC_OBLIQUITY)) *
-        Math.sin(toRadians(ECLIPTIC_POSITION))
-    )
+    asin(sin(toRadians(ECLIPTIC_OBLIQUITY)) * sin(toRadians(ECLIPTIC_POSITION)))
   );
 
-  const L_QUADRANT = Math.floor(ECLIPTIC_POSITION / 90) * 90;
-  const RA_QUADRANT = Math.floor(ALPHA / 90) * 90;
+  const L_QUADRANT = floor(ECLIPTIC_POSITION / 90) * 90;
+  const RA_QUADRANT = floor(ALPHA / 90) * 90;
 
   ALPHA = ALPHA + (L_QUADRANT - RA_QUADRANT);
 

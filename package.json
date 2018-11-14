@@ -1,6 +1,6 @@
 {
   "name": "@rlueder/leaflet.terminator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Refactored to use ES2015+, includes Babel and Flow type checking. Original library can be found at https://github.com/joergdietrich/Leaflet.Terminator ",
   "main": "L.Terminator.js",
   "scripts": {

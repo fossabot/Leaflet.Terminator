@@ -1,8 +1,9 @@
 // @flow
 
 /**
- * Following the short term expression in
- * http://en.wikipedia.org/wiki/Axial_tilt#Obliquity_of_the_ecliptic_.28Earth.27s_axial_tilt.29
+ * In astronomy, axial tilt, also known as obliquity, is the angle
+ * between an object's rotational axis and its orbital axis.
+ * https://en.wikipedia.org/wiki/Axial_tilt#Short_term
  *
  * @function getEclipticObliquity
  * @param {number} JULIAN_DAY

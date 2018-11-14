@@ -3,6 +3,7 @@
 /**
  * Calculate Greenwich Mean Sidereal Time
  * according to http://aa.usno.navy.mil/faq/docs/GAST.php
+ * https://en.wikipedia.org/wiki/Sidereal_time
  *
  * @function getGMST
  * @param {number} JULIAN_DAY

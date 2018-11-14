@@ -3,9 +3,10 @@
 /**
  * Calculate the present UTC Julian Date. Function is valid after
  * the beginning of the UNIX epoch 1970-01-01 and ignores leap seconds.
+ * https://en.wikipedia.org/wiki/Julian_day
  *
  * @function getJulianDay
- * @param {number} date
+ * @param {number} DATE
  * @returns {number} JULIAN_DAY
  */
 
