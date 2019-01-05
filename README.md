@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frlueder%2FLeaflet.Terminator.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Frlueder%2FLeaflet.Terminator?ref=badge_shield)
+
 Leaflet.Terminator
 ==================
 
@@ -32,3 +34,7 @@ option "resolution", which gives the step size at which the terminator
 points are computed. The step size is 1°/resolution, i.e. higher
 resolution values have smaller step sizes and more points in the
 polygon. The default value is 2.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Frlueder%2FLeaflet.Terminator.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Frlueder%2FLeaflet.Terminator?ref=badge_large)
